@@ -1,0 +1,20 @@
+{
+  "name": "dougong-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "清式斗口制斗拱参数化建模与 WebGL2 渲染系统",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "smoke": "esbuild tests/node-smoke.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/smoke.mjs && node node_modules/.cache/smoke.mjs",
+    "test:e2e": "esbuild tests/cdp-check.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/cdp.mjs && node node_modules/.cache/cdp.mjs",
+    "test:export": "esbuild tests/export-check.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/export.mjs && node node_modules/.cache/export.mjs",
+    "test:interaction": "esbuild tests/interaction-check.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/interaction.mjs && node node_modules/.cache/interaction.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

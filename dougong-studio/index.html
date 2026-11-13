@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>斗拱参数化建模系统 · 清式斗口制</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">枓</span>
+          <div>
+            <h1>清式斗拱参数化建模系统</h1>
+            <p>斗口制 · WebGL2 程序化渲染 · 无外部引擎</p>
+          </div>
+        </div>
+        <div class="global-params">
+          <label>斗口 d
+            <input id="global-doukou" type="number" min="40" max="200" step="1" value="90" />
+            <em>mm</em>
+          </label>
+          <label>踩数
+            <select id="global-cai">
+              <option value="3">三踩</option>
+              <option value="5">五踩</option>
+              <option value="7">七踩</option>
+              <option value="9" selected>九踩</option>
+            </select>
+          </label>
+          <label>科型
+            <select id="global-ke">
+              <option value="pingshen" selected>平身科</option>
+              <option value="zhutou">柱头科</option>
+              <option value="jiao">角科</option>
+            </select>
+          </label>
+        </div>
+      </header>
+      <nav class="tabs" id="tabs">
+        <button data-tab="library" class="active">构件库</button>
+        <button data-tab="assembly">斗拱组合</button>
+        <button data-tab="hall">整殿预览</button>
+        <button data-tab="material">材质彩画</button>
+        <button data-tab="export">导出与方案</button>
+      </nav>
+      <main id="page-root"></main>
+      <div id="tooltip" class="tooltip hidden"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
